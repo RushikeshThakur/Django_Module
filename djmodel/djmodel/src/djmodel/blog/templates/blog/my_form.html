@@ -1,0 +1,7 @@
+{% block content %}
+<form action="." method="POST">{% csrf_token %}
+	<h2>This is a blog form</h2>
+	{{ form.as_p }}
+	<input type="submit" name="search" value="Save">
+</form>
+{% endblock %}

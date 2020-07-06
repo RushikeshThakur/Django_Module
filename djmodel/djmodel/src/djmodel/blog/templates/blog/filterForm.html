@@ -1,0 +1,50 @@
+{% extends "blog/base.html" %}
+
+{% block title %}
+My New Title | {{ block.super }}
+{% endblock title %}
+
+
+
+{% block content %}
+
+	<h4>{{ textForm | title }}</h4>  
+	<h4>{{ textForm | lower }}</h4>
+	<h4>{{ today | date:"D d M Y f a" }}</h4>
+
+	<style>
+		.bold {
+			font-weight: bold;	
+		}
+
+	</style>
+
+	<ul>
+	{% for item in list_data %}
+	<li class = "{% cycle '' 'bold' '' '' %}">{{ item }}</li> {# cycle for givinf number which has to bold #}
+	{% endfor %}
+	</ul>
+
+	<ul>
+	{% for item in list_data %}
+	<li {% if forloop.counter|divisibleby:3 %} style="font-weight: bold;" {% endif %}>{{ item }}</li>
+	{% endfor %}
+	</ul>
+
+	<ul>
+	{% for item in list_data %}
+	<li {% if forloop.counter|divisibleby:3 %} style="font-weight: bold;" {% endif %}>{{ item }}</li>
+	{% endfor %}
+	</ul>
+
+{% endblock content %}
+
+
+
+
+
+{% block rushi %}
+
+<h2>Rushi ka chutiya  pa</h2>
+
+{% endblock rushi %}

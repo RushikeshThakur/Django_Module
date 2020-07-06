@@ -1,0 +1,9 @@
+{% block content %}
+
+{% for data in list_data  %}
+
+<p>{{ data.id }} = <a href="{{ data.get_absolute_url }}"> {{ data.title }}</a></p>
+
+{% endfor %}
+
+{% endblock%}
